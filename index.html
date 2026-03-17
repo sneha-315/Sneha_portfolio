@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sneha Pratihar - Upcoming Data Science and Machine Learning Specialist">
+    <title>Sneha Pratihar | Data Scientist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4d44db;
+            --dark: #2a2a72;
+            --light: #f8f9fa;
+            --accent: #ff6584;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Navigation styles */
+        nav {
+            background: rgba(255,255,255,0.9);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding-top: 80px;
+        }
+        .hero-content {
+            max-width: 600px;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        .hero-description {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        /* About Section */
+        #about {
+            padding: 6rem 0;
+            background: white;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-height: 500px;
+            object-fit: cover;
+        }
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .skill-item {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .skill-icon {
+            margin-right: 1rem;
+            color: var(--primary);
+        }
+        /* Experience Section */
+        #experience {
+            padding: 6rem 0;
+            background: #f8f9fa;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::after {
+            right: -10px;
+        }
+        .right::after {
+            left: -10px;
+        }
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        .timeline-title {
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+        .timeline-company {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .timeline-description {
+            margin: 0;
+        }
+        /* Projects Section */
+        #projects {
+            padding: 6rem 0;
+            background: white;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        .tech-tag {
+            background: var(--light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+        .project-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+        /* Contact Section */
+        #contact {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-link:hover {
+            color: var(--accent);
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-links {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::after {
+                left: 21px;
+            }
+            .left::after, .right::after {
+                left: 21px;
+            }
+            .right {
+                left: 0;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Sneha Pratihar</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm Sneha Pratihar</h1>
+                <h2 class="hero-subtitle">Upcoming Data Science & Machine Learning Specialist</h2>
+                <p class="hero-description">
+                    Upcoming Computer Science graduate with expertise in AI/ML,data analysis and web development, passionate about solving real-world problems 
+                    with cutting-edge technologies. Proven success in research and practical applications of machine learning.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Contact Me</a>
+                    <a href="#projects" class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--primary); margin-left: 1rem;">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <img src="image/Screenshot 2024-05-16 104037.png" alt="Sneha Pratihar" class="about-img">
+                </div>
+                <div class="about-content">
+                    <h3>Data Science and AI/ML  Enthusiast with Strong Technical Foundation</h3>
+                    <p>
+                        Upcoming Computer Science graduate with a strong foundation in software development, data science, and artificial intelligence. Quick to learn and adept at mastering new technologies, with proven success in both collaborative and self-driven projects. I have a passion for machine learning and have worked on several research 
+                        projects achieving state-of-the-art results in computer vision and NLP tasks.
+                    </p>
+                    <p>
+                        My technical skills span across Python, TensorFlow, PyTorch, and various ML algorithms. 
+                        I'm also proficient in data visualization tools like Power BI and Tableau.
+                    </p>
+                    <p>
+                        Apart from my knowledge in data science, I  also have some hands on experience in web development and cybersecurity.I am a 	Certified Postman Student Expert, proficient in API development, testing, and collaboration. 
+                    </p>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-code skill-icon"></i>
+                            <span>Python, Java, C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain skill-icon"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database skill-icon"></i>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line skill-icon"></i>
+                            <span>Data Visualization</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram skill-icon"></i>
+                            <span>Deep Learning</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server skill-icon"></i>
+                            <span>SQL Databases</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="https://drive.google.com/file/d/11cwkCj9Ina8P8GMQr-2mCTiFVVcJRH_s/view?usp=sharing" class="btn">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">My Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2025 - July 2025</div>
+                        <h3 class="timeline-title">Research Intern - Deep Learning</h3>
+                        <div class="timeline-company">National Institute of Technology, Rourkela</div>
+                        <p class="timeline-description">
+                            • Explored and implemented 5+ deep learning architectures including CNNs and LSTMs<br>
+                            • Achieved up to 98% accuracy on real-world classification tasks<br>
+                            • Developed expertise in PyTorch and TensorFlow
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2024 - July 2024</div>
+                        <h3 class="timeline-title">Summer Intern - Data Science</h3>
+                        <div class="timeline-company">National Institute of Technology, Rourkela</div>
+                        <p class="timeline-description">
+                            • Worked on 4 ML/DL projects covering NLP and computer vision<br>
+                            • Used Pandas, NumPy for data cleaning and visualization<br>
+                            • Applied algorithms with 90%+ average test accuracy
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 2024 - August 2024</div>
+                        <h3 class="timeline-title">Data Science Intern</h3>
+                        <div class="timeline-company">Teachnook, Bengaluru</div>
+                        <p class="timeline-description">
+                            • Built 3 real-time dashboards using Power BI and Tableau<br>
+                            • Processed datasets with 10,000+ rows using Python and SQL<br>
+                            • Improved mock business KPIs by 15-20% through insights
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">August 2024 - Present</div>
+                        <h3 class="timeline-title">AI/ML Member</h3>
+                        <div class="timeline-company">AWS Cloud Club, KIIT</div>
+                        <p class="timeline-description">
+                            • Organized 5+ workshops on ML/DL for 100+ participants<br>
+                            • Developed ML models including spam detection (95% accuracy)<br>
+                            • Increased sentiment analysis accuracy by 98%
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="image/Screenshot 2025-06-23 182428.png" alt="Face Recognition Project" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Face Recognition Using ML Models</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PCA</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">LSTM</span>
+                        </div>
+                        <p>
+                            Implemented face recognition achieving 92.5% accuracy with CNN-LSTM, improving model accuracy by 25% through optimized feature extraction.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1L6_uwrg28ZibRGqO4VfczwWaOTZnzC9h/view?usp=sharing" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="image/Screenshot 2025-06-17 202141.png" alt="Rice Leaf Disease Prediction" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Rice Leaf Disease Prediction</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">VGG16/19</span>
+                            <span class="tech-tag">ResNet50</span>
+                            <span class="tech-tag">SVM</span>
+                        </div>
+                        <p>
+                            Built disease prediction models achieving 99.97% accuracy with ResNet50 and HOG+LBP features for agricultural diagnostics.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1CHSBmPa0Pq2MAOv7sjttlnqyg057Y24X/view?usp=sharing" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="image/Screenshot 2025-06-23 183339.png" alt="Retinal Image Reconstruction" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Retinal Image Reconstruction</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Autoencoder</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Medical Imaging</span>
+                        </div>
+                        <p>
+                            Developed convolutional autoencoder achieving PSNR: 40.82 and SSIM: 0.968 for retinal fundus images, preserving diagnostic features.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1hgC1kjXujU_Ewk8uGCMF3k14Gu0G9oOz/view?usp=sharing" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="image\Screenshot 2025-07-09 120720.png"alt="Crude Oil Price Prediction" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Crude Oil Price Prediction</h3>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Deep Learning</span>
+                        <span class="tech-tag">Gradient Grasshopper Optimisation Algorithm</span>
+                        <span class="tech-tag">Matlab</span>
+                    </div>
+                    <p>
+                        Worked on a crude oil price prediction project using a hybrid approach combining machine learning,deep learning models.For classification, implemented a variable-weight ensemble strategy optimized using the Gradient Grasshopper Optimization Algorithm (GGOA), leading to improved prediction accuracy and robustness. 
+                    </p>
+                    <div class="project-links">
+                        <a href="http://localhost:8888/notebooks/Crisp_TSF_Using_ML_DL_Models.ipynb" class="btn" style="padding:0.5 rem,1 rem ;font-size:0.9 rem;">View Project</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Projects Section -->
+    <section id="projects" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Other Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="image/Screenshot 2025-06-24 092753.png" alt="Sentiment Analysis" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Twitter Sentiment Analysis</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Naive Bayes</span>
+                            <span class="tech-tag">NLTK</span>
+                        </div>
+                        <p>
+                            Implemented sentiment analysis on Twitter dataset using a Naive Bayes classifier, achieving 83% overall accuracy. Enhanced model performance through optimized text preprocessing.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/sneha-315/Sentiment_Analysis_Twitter_Dataset" target="_blank">
+                                <i class="fab fa-github"></i> View code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="image\Screenshot 2025-06-24 095537.png" alt="Sensor Data" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Behaviour Detection using Sensor Data</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">PCA</span>
+                        </div>
+                        <p>
+                            Implemented behavior detection using sensor data, achieving 85% accuracy by leveraging machine learning, deep learning, PCA for dimensionality reduction, and CNN for feature extraction.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/sneha-315/CMI---Detect-Behavior-with-Sensor-Data_SNEHA-PRATIHAR" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="image\Screenshot 2025-06-24 103021.png" alt="Fertilizer Prediction" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Predicting Optimal Fertilizers</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">K-Means</span>
+                            <span class="tech-tag">PCA</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                        </div>
+                        <p>
+                            Implemented a multiclass fertilizer prediction pipeline using LightGBM and XGBoost with 5-fold Stratified CV; engineered features, handled categorical encoding, and evaluated with MAP@3 and classification metrics.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/sneha-315/Optimal_Fertilizer" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="image\Screenshot 2025-06-24 094745.png" alt="Spam mail Detection" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Spam Mail Detection</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">Transformers</span>
+                        </div>
+                        <p>
+                            Built a fake news detection system using BERT, achieving 94% accuracy through fine-tuning on a custom dataset. Evaluated the model for real-time prediction performance.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/sneha-315/NLP_SPAM-MAIL/blob/main/nlp-spam-mail.ipynb" target="_blank">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span>pratiharsneha@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <span>+91 8658128592</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span>FR 32, NIT Campus, Rourkela, India</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sneha-pratihar-23109b298/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/sneha-315" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.blogger.com/blog/posts/1847867130663231590" class="social-link"><i class="fab fa-blog"></i></a>
+                        <a href="https://www.hackerrank.com/profile/pratiharsneha" class="social-link"><i class="fab fa-hackerrank"></i></a>
+                        <a href="https://www.kaggle.com/snehapratihar" class="social-link"><i class="fab fa-kaggle"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sneha Pratihar. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sneha-pratihar-23109b298/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/sneha-315" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://medium.com/@pratiharsneha" class="social-link"><i class="fab fa-medium"></i></a>
+                <a href="https://www.hackerrank.com/profile/pratiharsneha" class="social-link"><i class="fab fa-hackerrank"></i></a>
+                <a href="https://leetcode.com/sneha_pratihar/" class="social-link"><i class="fab fa-leetcode"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255,255,255,0.95)';
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.background = 'rgba(255,255,255,0.9)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Form submission handling
+        const form = document.querySelector('.contact-form form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
